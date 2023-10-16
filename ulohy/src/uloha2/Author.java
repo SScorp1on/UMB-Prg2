@@ -1,4 +1,4 @@
-package ulohy;
+package uloha2;
 
 public class Author {
     private String meno;
@@ -15,13 +15,5 @@ public class Author {
 
     public String getPriezvisko() {
         return priezvisko;
-    }
-
-    public void setMeno(String meno) {
-        this.meno = meno;
-    }
-
-    public void setPriezvisko(String priezvisko) {
-        this.priezvisko = priezvisko;
     }
 }

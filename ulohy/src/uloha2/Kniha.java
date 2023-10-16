@@ -1,6 +1,8 @@
-package ulohy;
+package uloha2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Kniha {
@@ -8,9 +10,10 @@ public class Kniha {
     private Author author;
     private int rokVydania;
     private ArrayList<Kapitola> kapitoly;
-
+    private int pocetKapitol;
     public Kniha(int pocetKapitol) {
-        kapitoly = new ArrayList<>(pocetKapitol);
+        this.pocetKapitol = pocetKapitol;
+        kapitoly = new ArrayList<>();
     }
 
     public void setNazov(String nazov) {
@@ -47,6 +50,9 @@ public class Kniha {
     }
 
     public void setKapitolu(Kapitola k) {
-        kapitoly.add(k);
+        if (pocetKapitol <= kapitoly.size()){
+            System.out.println("Chyba: počet Kapitol je maximalny");
+        } else
+            kapitoly.add(k);
     }
 }

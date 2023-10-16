@@ -1,4 +1,4 @@
-package ulohy;
+package uloha2;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class Kniznica {
     }
 
     public void setKnihu(Kniha kniha) {
-        knihy.add(kniha);
+                knihy.add(kniha);
     }
 
     public void zobrazKnihy() {

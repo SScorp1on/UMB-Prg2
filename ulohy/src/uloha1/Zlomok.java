@@ -1,4 +1,4 @@
-package ulohy;
+package uloha1;
 
 public class Zlomok {
     int citatel;

@@ -1,4 +1,4 @@
-package ulohy;
+package uloha2;
 
 public class Kapitola {
     private String nazov;

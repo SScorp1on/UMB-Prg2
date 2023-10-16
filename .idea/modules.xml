@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UMB-Prg2.iml" filepath="$PROJECT_DIR$/UMB-Prg2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cvicenia/cvicenia.iml" filepath="$PROJECT_DIR$/cvicenia/cvicenia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ulohy/ulohy.iml" filepath="$PROJECT_DIR$/ulohy/ulohy.iml" />
     </modules>
   </component>
 </project>
