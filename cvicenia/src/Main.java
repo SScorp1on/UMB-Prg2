@@ -1,7 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Pole p = new Pole(10);
-        p.napln();
-        p.vypis();
+        Akvarium a2 = new Akvarium(7, 4);
+        a2.zobraz();
     }
 }

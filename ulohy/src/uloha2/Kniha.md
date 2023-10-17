@@ -10,7 +10,6 @@ Kniha ďalej bude mať funkciu (metódu) na spočítanie všetkých písmen (zna
 Časť 2: Rozšírte príklad o koncept Knižnice (Knižnica má tiež svoj názov, adresu, a pole kníh, ktoré sa v nej
 nachádzajú).
 
-
 ```mermaid
 ---
 title: UML Diagram
@@ -53,6 +52,6 @@ classDiagram
         +zobrazKnihy()
     }
     Kapitola --|> Kniha
-    Author --|> Kniha
+    Author --> Kniha
     Kniha --|> Kniznica
 ```
