@@ -51,7 +51,5 @@ classDiagram
         +SetKnihu(kniha: Kniha)
         +zobrazKnihy()
     }
-    Kapitola --|> Kniha
-    Author --> Kniha
-    Kniha --|> Kniznica
+   
 ```
