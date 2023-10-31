@@ -19,23 +19,32 @@ public class Akvarium {
         }
     }
 
+    public void posun() {
+        for (Ryba r : ryby) {
+            if (r.getX() >= sirka - 1 || r.getX() <= 0) {
+                r.osocSa();
+            }
+            r.posun();
+        }
+    }
+
     public void zobraz() {
         for (int y = 0; y < vyska; y++) {
             for (int x = 0; x < sirka; x++) {
-                Ryba r = new Ryba(100, 100);
+                boolean jeRyba = false;
                 for (Ryba ryba : ryby) {
-                    if (ryba.getX() == x && ryba.getY() == y) {
-                        r.setX(x);
-                        r.setY(y);
+                    if (ryba.nachadzaSa(x, y)) {
+                        jeRyba = true;
                     }
                 }
-                if (y == r.getY() && x == r.getX())
+                if (jeRyba)
                     System.out.print("R");
                 else
                     System.out.print(".");
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public void pridajRybu(int x, int y) {

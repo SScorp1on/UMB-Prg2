@@ -6,6 +6,8 @@ classDiagram
         +Ryba(x: int, y: int)
         +getX(): int
         +getY(): int
+        +nachadzaSa(x: int, y: int): boolean
+        +incrementX()
     }
     class Akvarium{
         -sirka: int
@@ -14,6 +16,7 @@ classDiagram
         -ryby: LinkedList~Ryba~
         +Akvarium(sirka: int, vyska: int, pocetRyb: int)
         +zobraz()
+        +posun()
     }
-    Akvarium -- Ryba
+    Akvarium "1" -- "1..*" Ryba
 ```
