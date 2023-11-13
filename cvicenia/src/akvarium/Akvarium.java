@@ -1,3 +1,9 @@
+package akvarium;
+
+import akvarium.obsah.Gupka;
+import akvarium.obsah.Ryba;
+import akvarium.obsah.Skalar;
+
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -14,17 +20,18 @@ public class Akvarium {
         ryby = new LinkedList<>();
         Random random = new Random();
         for (int i = 0; i < pocetRyb; i++) {
-            Ryba ryba = new Ryba(random.nextInt(sirka), random.nextInt(vyska));
-            ryby.add(ryba);
+            int typ = random.nextInt(2);
+            if (typ == 0) {
+                ryby.add(new Skalar(random.nextInt(sirka), random.nextInt(vyska)));
+            } else {
+                ryby.add(new Gupka(random.nextInt(sirka), random.nextInt(vyska)));
+            }
         }
     }
 
     public void posun() {
         for (Ryba r : ryby) {
-            if (r.getX() >= sirka - 1 || r.getX() <= 0) {
-                r.osocSa();
-            }
-            r.posun();
+            r.posun(sirka, vyska);
         }
     }
 
@@ -38,7 +45,11 @@ public class Akvarium {
                     }
                 }
                 if (jeRyba)
-                    System.out.print("R");
+                    for (Ryba ryba : ryby) {
+                        if (ryba.nachadzaSa(x, y)) {
+                            System.out.print(ryba.zobrazSa());
+                        }
+                    }
                 else
                     System.out.print(".");
             }
@@ -47,8 +58,8 @@ public class Akvarium {
         System.out.println();
     }
 
-    public void pridajRybu(int x, int y) {
+    /*public void pridajRybu(int x, int y) {
         Ryba ryba = new Ryba(x, y);
         ryby.add(ryba);
-    }
+    }*/
 }

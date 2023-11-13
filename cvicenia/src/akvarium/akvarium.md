@@ -3,7 +3,7 @@ classDiagram
     class Ryba{
         -x: int
         -y: int
-        +Ryba(x: int, y: int)
+        +akvarium.obsah.Ryba(x: int, y: int)
         +getX(): int
         +getY(): int
         +nachadzaSa(x: int, y: int): boolean
@@ -13,8 +13,8 @@ classDiagram
         -sirka: int
         -vyska: int
         -pocetRyb: int
-        -ryby: LinkedList~Ryba~
-        +Akvarium(sirka: int, vyska: int, pocetRyb: int)
+        -ryby: LinkedList~akvarium.obsah.Ryba~
+        +akvarium.Akvarium(sirka: int, vyska: int, pocetRyb: int)
         +zobraz()
         +posun()
     }
