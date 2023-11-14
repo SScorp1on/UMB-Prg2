@@ -11,13 +11,12 @@ public class Akvarium {
     private final int sirka;
     private final int vyska;
 
-    private final LinkedList<Ryba> ryby;
+    private final LinkedList<Ryba> ryby = new LinkedList<>();
 
 
     public Akvarium(int sirka, int vyska, int pocetRyb) {
         this.sirka = sirka;
         this.vyska = vyska;
-        ryby = new LinkedList<>();
         Random random = new Random();
         for (int i = 0; i < pocetRyb; i++) {
             int typ = random.nextInt(2);
@@ -38,18 +37,15 @@ public class Akvarium {
     public void zobraz() {
         for (int y = 0; y < vyska; y++) {
             for (int x = 0; x < sirka; x++) {
-                boolean jeRyba = false;
+                Ryba najdenaRyba = null;
                 for (Ryba ryba : ryby) {
                     if (ryba.nachadzaSa(x, y)) {
-                        jeRyba = true;
+                        najdenaRyba = ryba;
+                        break;
                     }
                 }
-                if (jeRyba)
-                    for (Ryba ryba : ryby) {
-                        if (ryba.nachadzaSa(x, y)) {
-                            System.out.print(ryba.zobrazSa());
-                        }
-                    }
+                if (najdenaRyba != null)
+                    System.out.println(najdenaRyba.zobrazSa());
                 else
                     System.out.print(".");
             }
@@ -57,9 +53,4 @@ public class Akvarium {
         }
         System.out.println();
     }
-
-    /*public void pridajRybu(int x, int y) {
-        Ryba ryba = new Ryba(x, y);
-        ryby.add(ryba);
-    }*/
 }
