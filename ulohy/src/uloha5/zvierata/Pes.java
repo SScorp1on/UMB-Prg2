@@ -1,4 +1,7 @@
-package uloha5;
+package uloha5.zvierata;
+
+import uloha5.shopnosti.Behajuce;
+import uloha5.shopnosti.Plavajuce;
 
 public class Pes extends Zviera implements Behajuce, Plavajuce {
     private final float poslusnost;

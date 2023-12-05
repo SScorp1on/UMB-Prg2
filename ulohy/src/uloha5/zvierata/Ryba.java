@@ -1,4 +1,6 @@
-package uloha5;
+package uloha5.zvierata;
+
+import uloha5.shopnosti.Plavajuce;
 
 public class Ryba extends Zviera implements Plavajuce {
     private final int vydrz;

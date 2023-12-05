@@ -1,10 +1,13 @@
 package uloha5;
 
+import uloha5.miesta.Miesto;
+
 import java.util.LinkedList;
+import java.util.List;
 
 public class Zoo {
     String nazov;
-    LinkedList<Miesto> miesta = new LinkedList<>();
+    List<Miesto> miesta = new LinkedList<>();
 
     public Zoo(String nazov) {
         this.nazov = nazov;

@@ -1,4 +1,6 @@
-package uloha5;
+package uloha5.zvierata;
+
+import uloha5.shopnosti.Behajuce;
 
 public class Zirafa extends Zviera implements Behajuce {
     private final int dlzkaKrku;

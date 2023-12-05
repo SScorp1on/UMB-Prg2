@@ -3,6 +3,8 @@ package akvarium;
 import akvarium.obsah.Gupka;
 import akvarium.obsah.Ryba;
 import akvarium.obsah.Skalar;
+import akvarium.vynimky.NepovoleneRozmeryAkvaria;
+import akvarium.vynimky.NepovolenyPocetRyb;
 
 import java.util.LinkedList;
 import java.util.Random;
@@ -14,7 +16,11 @@ public class Akvarium {
     private final LinkedList<Ryba> ryby = new LinkedList<>();
 
 
-    public Akvarium(int sirka, int vyska, int pocetRyb) {
+    public Akvarium(int sirka, int vyska, int pocetRyb) throws NepovoleneRozmeryAkvaria, NepovolenyPocetRyb {
+        if (sirka < 3 || vyska < 3)
+            throw new NepovoleneRozmeryAkvaria("3x3");
+        if (pocetRyb > sirka * vyska)
+            throw new NepovolenyPocetRyb("V akvariu sa nemoze nachadzat viac ryb ako je miesta");
         this.sirka = sirka;
         this.vyska = vyska;
         Random random = new Random();
